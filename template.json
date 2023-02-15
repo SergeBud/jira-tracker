@@ -1,0 +1,46 @@
+{
+	"apiVersion":"V2/V3",
+	"enabled": true/false,
+	"settings": {
+		"url": "https://company.atlassian.net",
+		"username": "username@test.com",
+		"token": "abc"
+	},
+	"template": {
+		"MONDAY": [
+			{
+				"issue": "ISSUE-1",
+				"time": "8h",
+				"comment": "Project onboarding"
+			}
+		],
+		"TUESDAY": [
+			{
+				"issue": "ISSUE-1",
+				"time": "8h",
+				"comment": "Project onboarding"
+			}
+		],
+		"WEDNESDAY": [
+			{
+				"issue": "ISSUE-1",
+				"time": "8h",
+				"comment": "Project onboarding"
+			}
+		],
+		"THURSDAY": [
+			{
+				"issue": "ISSUE-1",
+				"time": "8h",
+				"comment": "Project onboarding"
+			}
+		],
+		"FRIDAY": [
+			{
+				"issue": "ISSUE-1",
+				"time": "8h",
+				"comment": "Project onboarding"
+			}
+		]
+	}
+}
