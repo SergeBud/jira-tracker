@@ -1,8 +1,6 @@
 package sb.personal.lambdas.handlers;
 
-import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import lombok.Getter;
-import lombok.Setter;
 import sb.personal.lambdas.jira.JiraClient;
 import sb.personal.lambdas.model.JiraSettings;
 import sb.personal.lambdas.model.JiraTemplate;
@@ -15,9 +13,6 @@ import java.util.Objects;
 public abstract class AbstractTempateHandler implements TemplateHandler {
 
     @Getter
-    @Setter
-    private LambdaLogger logger;
-
     protected final JiraClient jiraClient;
 
     public AbstractTempateHandler(JiraClient jiraClient) {

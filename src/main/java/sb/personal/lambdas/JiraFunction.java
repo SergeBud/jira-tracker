@@ -10,12 +10,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.mashape.unirest.http.Unirest;
 import lombok.SneakyThrows;
-import sb.personal.lambdas.handlers.V3TemplateHandler;
-import sb.personal.lambdas.handlers.V2TemplateHandler;
 import sb.personal.lambdas.handlers.TemplateHandler;
+import sb.personal.lambdas.handlers.V2TemplateHandler;
+import sb.personal.lambdas.handlers.V3TemplateHandler;
 import sb.personal.lambdas.jira.JiraClient;
-import sb.personal.lambdas.jira.V3JiraClient;
 import sb.personal.lambdas.jira.V2JiraClient;
+import sb.personal.lambdas.jira.V3JiraClient;
 import sb.personal.lambdas.model.ApiVersion;
 import sb.personal.lambdas.model.JiraTemplate;
 
@@ -74,8 +74,10 @@ public class JiraFunction {
 
     public void handle(Context context) {
         var logger = context.getLogger();
+
         settingHandlers.values()
-                       .forEach(templateHandler -> templateHandler.setLogger(logger));
+                       .forEach(templateHandler -> templateHandler.getJiraClient()
+                                                                  .setLogger(logger));
 
         var listing = s3.listObjectsV2(BUCKET_NAME);
 

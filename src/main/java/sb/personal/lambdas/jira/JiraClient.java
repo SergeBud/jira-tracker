@@ -1,5 +1,6 @@
 package sb.personal.lambdas.jira;
 
+import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
@@ -14,6 +15,8 @@ import java.util.List;
 public interface JiraClient {
 
     ApiVersion getType();
+
+    void setLogger(LambdaLogger logger);
 
     String getRestApiSuffix();
 
